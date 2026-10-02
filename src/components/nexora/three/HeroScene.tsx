@@ -1,4 +1,4 @@
-import { useMemo, useRef, type MutableRefObject } from "react";
+import { useMemo, useRef, type MutableRefObject, type ReactNode } from "react";
 import { Canvas, useFrame, useThree } from "@react-three/fiber";
 import { Environment, Lightformer, Sparkles, Html, RoundedBox } from "@react-three/drei";
 import * as THREE from "three";
@@ -30,7 +30,7 @@ const PATH = new THREE.CatmullRomCurve3(
 
 const ease = (t: number) => t * t * (3 - 2 * t);
 
-function Layer({ z, label, color, children }: { z: number; label: string; color: string; children?: React.ReactNode }) {
+function Layer({ z, label, color, children }: { z: number; label: string; color: string; children?: ReactNode }) {
   return (
     <group position={[0, 1.6, z]}>
       <RoundedBox args={[3.2, 2, 0.06]} radius={0.05}>
@@ -85,7 +85,7 @@ function Computer() {
 }
 
 function Pylon({ position, height = 8 }: { position: [number, number, number]; height?: number }) {
-  const legs = [
+  const legs: [number, number][] = [
     [-0.6, -0.6],
     [0.6, -0.6],
     [0.6, 0.6],

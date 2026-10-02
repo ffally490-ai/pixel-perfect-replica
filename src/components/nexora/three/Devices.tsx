@@ -1,6 +1,6 @@
 import type { ThreeElements } from "@react-three/fiber";
 type GroupProps = ThreeElements["group"];
-import { useRef } from "react";
+import { useRef, type ReactNode } from "react";
 import { useFrame } from "@react-three/fiber";
 import * as THREE from "three";
 import type { DeviceKind } from "@/lib/nexora";
@@ -140,7 +140,7 @@ export function Device({ kind, ...props }: { kind: DeviceKind } & GroupProps) {
   }
 }
 
-export function Spin({ children, speed = 0.6 }: { children: React.ReactNode; speed?: number }) {
+export function Spin({ children, speed = 0.6 }: { children: ReactNode; speed?: number }) {
   const g = useRef<THREE.Group>(null);
   useFrame((_, d) => {
     if (g.current) g.current.rotation.y += Math.min(d, 0.05) * speed;
