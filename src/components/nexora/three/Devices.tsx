@@ -1,3 +1,5 @@
+import type { ThreeElements } from "@react-three/fiber";
+type GroupProps = ThreeElements["group"];
 import { useRef } from "react";
 import { useFrame } from "@react-three/fiber";
 import * as THREE from "three";
@@ -19,7 +21,7 @@ function Led({ position, color = "#4DB8FF", speed = 3, phase = 0 }: { position: 
   );
 }
 
-export function Cambium(props: JSX.IntrinsicElements["group"]) {
+export function Cambium(props: GroupProps) {
   return (
     <group {...props}>
       <mesh position={[0, 0, -0.12]}>
@@ -39,7 +41,7 @@ export function Cambium(props: JSX.IntrinsicElements["group"]) {
   );
 }
 
-export function NanoStation(props: JSX.IntrinsicElements["group"]) {
+export function NanoStation(props: GroupProps) {
   return (
     <group {...props}>
       <mesh position={[0, -0.2, -0.12]}>
@@ -56,7 +58,7 @@ export function NanoStation(props: JSX.IntrinsicElements["group"]) {
   );
 }
 
-export function LiteBeam(props: JSX.IntrinsicElements["group"]) {
+export function LiteBeam(props: GroupProps) {
   return (
     <group {...props}>
       <mesh rotation={[Math.PI / 2, 0, 0]}>
@@ -84,7 +86,7 @@ export function LiteBeam(props: JSX.IntrinsicElements["group"]) {
   );
 }
 
-export function Router(props: JSX.IntrinsicElements["group"]) {
+export function Router(props: GroupProps) {
   return (
     <group {...props}>
       <mesh castShadow>
@@ -104,7 +106,7 @@ export function Router(props: JSX.IntrinsicElements["group"]) {
   );
 }
 
-export function Starlink(props: JSX.IntrinsicElements["group"]) {
+export function Starlink(props: GroupProps) {
   return (
     <group {...props}>
       <mesh position={[0, 0.35, 0]} rotation={[-0.6, 0, 0]} castShadow>
@@ -123,7 +125,7 @@ export function Starlink(props: JSX.IntrinsicElements["group"]) {
   );
 }
 
-export function Device({ kind, ...props }: { kind: DeviceKind } & JSX.IntrinsicElements["group"]) {
+export function Device({ kind, ...props }: { kind: DeviceKind } & GroupProps) {
   switch (kind) {
     case "cambium":
       return <Cambium {...props} />;
