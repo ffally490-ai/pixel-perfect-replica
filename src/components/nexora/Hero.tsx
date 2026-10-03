@@ -84,7 +84,7 @@ export function Hero() {
         </div>
         <div className="absolute bottom-6 left-1/2 z-10 -translate-x-1/2 px-4">
           <motion.div key={step} initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} className="glass-deep rounded-full px-5 py-2 text-center font-display text-sm text-on-deep">
-            {STEPS[step][1]}
+            {STEPS[step]?.[1]}
           </motion.div>
           {step === 0 && <p className="mt-2 text-center text-xs text-on-deep-muted">Faites défiler pour suivre le voyage du message ↓</p>}
         </div>
