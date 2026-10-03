@@ -317,7 +317,7 @@ export function Simulator() {
           <input type="range" min={1} max={30} value={devices} onChange={(e) => setDevices(+e.target.value)} className="w-full accent-[var(--electric)]" />
           <p className="mt-5 text-sm font-medium">Usage principal</p>
           <div className="mt-2 grid grid-cols-3 gap-2">
-            {[["navigation", "Navigation"], ["streaming", "Vidéo"], ["pro", "Professionnel"]].map(([v, l]) => (
+            {([["navigation", "Navigation"], ["streaming", "Vidéo"], ["pro", "Professionnel"]] as const).map(([v, l]) => (
               <button key={v} onClick={() => setUsage(v)} className={`rounded-xl px-3 py-2 text-sm ${usage === v ? "bg-brand text-on-deep" : "bg-muted"}`}>{l}</button>
             ))}
           </div>

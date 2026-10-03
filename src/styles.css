@@ -210,3 +210,5 @@
 .group:hover .logo-wave path:nth-child(2) { animation-delay: .15s; }
 .group:hover .logo-wave path:nth-child(3) { animation-delay: .3s; }
 .caret { animation: blink 1s step-end infinite; }
+
+.field { width:100%; border-radius:0.75rem; border:1px solid var(--border); background:var(--background); padding:0.65rem 1rem; color:var(--foreground); }

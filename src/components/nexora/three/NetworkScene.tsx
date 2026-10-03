@@ -145,7 +145,7 @@ export default function NetworkScene({ mode, onPick }: { mode: ViewMode; onPick:
                 <Router scale={0.5} />
               </group>
             )}
-            <Beam a={tops[c.from]} b={roof} />
+            <Beam a={tops[c.from]!} b={roof} />
             <Html position={[c.p[0], s[1] + 1.2, c.p[1]]} center distanceFactor={20}>
               <span className="glass-deep whitespace-nowrap rounded-full px-2 py-0.5 text-[10px]">{LABEL[c.kind]}</span>
             </Html>
